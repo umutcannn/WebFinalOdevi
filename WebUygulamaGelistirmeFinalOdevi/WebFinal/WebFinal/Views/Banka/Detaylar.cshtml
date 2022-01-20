@@ -1,0 +1,61 @@
+﻿@model WebFinal.Models.Banka
+
+@{
+    ViewData["Title"] = "Detaylar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Çalışan Detayları</h4>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Soyad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sehir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sehir)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ilce)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ilce)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Banka_Ad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Banka_Ad)
+        </dd>
+    </dl>
+</div>
+<div>
+   <button type="button" class="btn btn-light" style="width:62px; padding:1px">@Html.ActionLink("Edit", "Guncelle", new { id = Model.Id } ,new { style = "color: Black;" }) </button> |
+    <a asp-action="Listele">Liste Sayfasına Geri Dön</a>
+</div>

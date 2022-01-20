@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebFinal.Models.Banka>
+
+@{
+    ViewData["Title"] = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Çalışanlar Listesi </h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sehir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ilce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Banka_Ad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sehir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ilce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Banka_Ad)
+            </td>
+            <td>
+            <button type="button" class="btn btn-light" style="width:64px; padding:1px">@Html.ActionLink("Edit", "Guncelle", new { id = item.Id }, new { style = "color: Black;" }) </button> |
+            <button type="button" class="btn btn-light" style="width:62px; padding:1px">@Html.ActionLink("Details", "Detaylar", new { id = item.Id }, new { style = "color: Black;" }) </button> |
+            <button type="button" class="btn btn-light" style="width:60px; padding:1px">@Html.ActionLink("Delete", "Sil", new { id = item.Id }, new { style = "color: Black;" }) </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<p>
+    <button type="button" class="btn btn-light" style="width:100%; padding:1px">  <a asp-action="Ekle"> Yeni Kayıt Oluştur </a></button>
+</p>
